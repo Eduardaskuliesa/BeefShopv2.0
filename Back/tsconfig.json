@@ -1,0 +1,21 @@
+{
+  "ts-node": {
+    "files": true,
+    "require": [
+      "tsconfig-paths/register"
+    ]
+  },
+    "compilerOptions": {
+      "target": "es2017",
+      "module": "NodeNext",
+      "resolveJsonModule": true,
+      "moduleResolution": "node",
+      "baseUrl": "src",
+      "outDir": "dist",
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "sourceMap": true,
+      "noImplicitAny": true,
+    },
+    "include": ["src/**/*"],
+  }
