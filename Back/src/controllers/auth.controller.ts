@@ -12,7 +12,7 @@ const register = async (req: express.Request, res: express.Response) => {
     AuthValidation.registerValidationSchema.validateSync(req.body, { abortEarly: false });
 
     const emailExist = await UserModel.findOne({ email });
-    if (emailExist) return res.status(400).json({ message: 'Email is arleady in use' });
+    if (emailExist) return res.status(401).json({ message: 'Email is arleady in use' });
 
     const hashedPassword = BcryptService.hash(password);
 
@@ -24,7 +24,7 @@ const register = async (req: express.Request, res: express.Response) => {
     await user.save();
     return res.status(200).json({ success: true, message: 'Your account is ready for use' });
    } catch (error) {
-       return res.status(400).json({ message: error.message });
+       return res.status(404).json({ message: error.errors });
    }
 };
 
