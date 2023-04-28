@@ -1,6 +1,6 @@
-export type RegisterFormFields = {
-  email: string,
-  password: string,
-  passwordConfirmation: string,
-  name: string,
-};
+export interface RegisterFormFields {
+  email: string;
+  password: string;
+  passwordConfirmation: string;
+  name: string;
+}
